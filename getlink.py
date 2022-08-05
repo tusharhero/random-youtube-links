@@ -7,14 +7,18 @@ He has allowed me to use his code.
 import random
 import string
 import scrapetube
-
+import json
+from datetime import date
 
 def get_random_link(search_query: str, limit: int = 100):
+    print("trying")
     videos = scrapetube.get_search(search_query, limit=limit)
     video_id = []
     for video in videos:
         video_id.append(video["videoId"])
-    return f"https://www.youtube.com/watch?v={random.choice(video_id)}"
+    if len(video_id) == 0:
+        get_random_link(search_query)
+    return random.choice(video_id)
 
 
 def get_search_query():
@@ -27,10 +31,19 @@ def get_search_query():
 
     return search_query
 
+def write_json(new_data, filename='data.json'):
+    with open(filename,'r+') as file:
+        file_data = json.load(file)
+        file_data["ids"].update(new_data)
+        file.seek(0)
+        json.dump(file_data, file, indent = 4)
+ 
 
 def main():
     search_query = get_search_query()
     link = get_random_link(search_query)
+    linkjson = {str(date.today()):link}
+    write_json(linkjson,"ytrandlinks.json")
     print(link)
 
 
