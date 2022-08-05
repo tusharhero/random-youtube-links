@@ -4,7 +4,7 @@ const url = 'https://raw.githubusercontent.com/tusharhero/randomlygeneratedytlin
 
 fetch(url).then(x => x.json()).then((x) => 
 {
-    const src = 'https://www.youtube.com/embed/' + x.id.videoID;
+    const src = 'https://yt.artemislena.eu/embed/' + x.id.videoID;
 
     ytEmbed.setAttribute('src', src);
 
