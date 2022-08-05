@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Generate Stats Images
+name: Yt random gen and update website
 
 # Controls when the action will run. Triggers the workflow on push events
 on:
@@ -46,7 +46,7 @@ jobs:
         python3 -m pip install scrapetube
 
     # Generate all statistics images
-    - name: Generate images
+    - name: Generate link
       run: |
         python3 --version
         python3 getlink.py
