@@ -1,0 +1,121 @@
+:root
+{
+    --accentGreen: #20c40e;
+    --accentRed: #f2000c;
+}
+
+body
+{
+    min-height: 100vh;
+    background-image: linear-gradient(-45deg, hsl(0, 0%, 10%), hsl(0, 0%, 15%));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+body::-webkit-scrollbar { display: none; }
+
+#title
+{
+    font-size: 3rem;
+    margin: .7em 0;
+    position: relative;
+}
+
+#title::after
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-image: linear-gradient(45deg, var(--accentGreen), var(--accentRed));
+    border-radius: 2em;
+}
+
+#subTitle
+{
+    font-size: 2rem;
+    margin: .4em 0;
+}
+
+#ytEmbed
+{
+    --factor: 3;
+    font-size: 20px;
+    border: none;
+    height: calc(1080px / var(--factor));
+    width: calc(1920px / var(--factor));
+    visibility: hidden;
+    transition:
+        border-radius ease 200ms,
+        box-shadow ease 300ms;
+}
+
+#ytEmbed:hover
+{
+    border-radius: .7em;
+    box-shadow:  0 0 1em .1em var(--accentRed);
+}
+
+#links { margin: 3em 0; }
+
+button.github
+{
+    border: none;
+    background: none;
+}
+
+img.github
+{
+    --size: 40px;
+    height: var(--size);
+    width: var(--size);
+}
+
+button.github
+{
+    font-size: 20px;
+    position: relative;
+}
+
+button.github::after, button.github::before
+{
+    content: '';
+    position: absolute;
+    height: .15em;
+    width: 100%;
+    transform: scaleX(0);
+    transition: transform ease 300ms;
+}
+
+button.github::before
+{
+    background-color: var(--accentGreen);
+    top: -.3em;
+    left: 0;
+    transform-origin: left;
+}
+
+button.github::after
+{
+    transform-origin: center;
+    background-color: var(--accentRed);
+    bottom: -.3em;
+    left: 0;
+    transform-origin: right;
+}
+
+button.github:hover::before
+{
+    transform: scaleX(1);
+    transform-origin: right;
+}
+
+button.github:hover::after
+{
+    transform: scaleX(1);
+    transform-origin: left;
+}
