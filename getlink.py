@@ -20,7 +20,7 @@ def get_random_link(search_query: str, limit: int = 100):
         # print(video)
         video_id.append(video["videoId"])
     if len(video_id) == 0:
-        get_random_link(search_query)
+        return False
     return random.choice(video_id)
 
 
@@ -44,9 +44,13 @@ def write_json(new_data, filename="data.json"):
 
 
 def main():
-    search_query = get_search_query()
-    link = get_random_link(search_query)
+
+    link = get_random_link(get_search_query())
+    if link == False:
+        link = get_random_link(get_search_query())
+
     linkjson = {"videoID": link, "generatedAt": str(date.today())}
+    
     write_json(linkjson, "ytrandlinks.json")
     print(link)
 
