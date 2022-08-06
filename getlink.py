@@ -11,7 +11,7 @@ import json
 from datetime import date
 
 
-def get_random_link(search_query: str, limit: int = 100):
+def get_random_link(search_query: str, limit: int = 10000):
     print("trying")
 
     videos = scrapetube.get_search(search_query, limit=limit)
@@ -50,7 +50,7 @@ def main():
         link = get_random_link(get_search_query())
 
     linkjson = {"videoID": link, "generatedAt": str(date.today())}
-    
+
     write_json(linkjson, "ytrandlinks.json")
     print(link)
 
