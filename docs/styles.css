@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
 
 :root
 {
@@ -9,12 +9,12 @@
 body
 {
     min-height: 100vh;
-    background-image: linear-gradient(-45deg, hsl(0, 0%, 10%), hsl(0, 0%, 15%));
+    background-image: linear-gradient(-60deg, hsl(143, 100%, 10%) ,hsl(168, 94%, 13%)45%, hsl(0, 100%, 9%) );
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
-    font-family: 'Cinzel Decorative';
+    font-family: 'Syne Mono';
 }
 
 body::-webkit-scrollbar { display: none; }
@@ -49,8 +49,10 @@ body::-webkit-scrollbar { display: none; }
     --factor: 3;
     font-size: 20px;
     border: none;
-    height: calc(1080px / var(--factor));
-    width: calc(1920px / var(--factor));
+    margin: auto;
+    height: calc(100vh / var(--factor));
+    width: calc(100vw);
+    max-width: calc(40rem );
     visibility: hidden;
     transition:
         border-radius ease 200ms,
