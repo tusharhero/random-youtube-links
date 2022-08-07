@@ -46,7 +46,7 @@ def write_json(new_data, filename="data.json"):
 def main():
 
     link = get_random_link(get_search_query())
-    if link == False:
+    while link == False:
         link = get_random_link(get_search_query())
 
     linkjson = {"videoID": link, "generatedAt": str(date.today())}
