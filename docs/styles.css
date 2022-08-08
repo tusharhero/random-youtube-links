@@ -26,18 +26,6 @@ body::-webkit-scrollbar { display: none; }
     position: relative;
 }
 
-#title::after
-{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    width: 100%;
-    background-image: linear-gradient(45deg, var(--accentGreen), var(--accentRed));
-    border-radius: 2em;
-}
-
 #subTitle
 {
     font-size: 2rem;
