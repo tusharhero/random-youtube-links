@@ -15,6 +15,20 @@ body
     align-items: center;
     color: white;
     font-family: 'Syne Mono';
+    animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	25% {
+		background-position: 500% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 body::-webkit-scrollbar { display: none; }
@@ -112,3 +126,31 @@ button.github:hover::after
     transform: scaleX(1);
     transform-origin: left;
 }
+.typewriter h1 {
+    color: var(--accentGreen);
+    overflow: hidden;/* Ensures the content is not revealed until the animation */
+    border-right: .17em solid var(--accentRed);/* The typewriter cursor */
+    white-space: nowrap;/* Keeps the content on a single line */
+    margin: 0 auto;/* Gives that scrolling effect as the typing happens */
+    letter-spacing: .17em;/* Adjust as needed */
+    animation: typing 3.5s steps(30, end), blinking-cursor .5s step-end infinite;
+  }
+  /* The typing effect */
+  @keyframes typing {
+    from {
+      width: 0
+    }
+    to {
+      width: 100%
+    }
+  }
+  /* The typewriter cursor effect */
+  @keyframes blinking-cursor {
+    from,
+    to {
+      border-color: transparent
+    }
+    50% {
+      border-color: var(--accentRed);
+    }
+  }
