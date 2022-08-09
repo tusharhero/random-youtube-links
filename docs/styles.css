@@ -69,32 +69,48 @@ body::-webkit-scrollbar { display: none; }
     align-self: center;
 }
 
-#links
+#others
 {
     position: absolute;
-    bottom: 2rem;
+    bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-button.github
+a
+{
+    text-decoration: none;
+}
+
+#th { color: var(--accentRed); }
+#bs { color: var(--accentGreen); }
+
+#links
+{
+    margin-top: 1.5em;
+}
+
+button
 {
     border: none;
     background: none;
+    margin: 0 1em;
 }
 
-img.github
+img
 {
     --size: 40px;
     height: var(--size);
-    width: var(--size);
 }
 
-button.github
+button
 {
     font-size: 20px;
     position: relative;
 }
 
-button.github::after, button.github::before
+button::after, button::before
 {
     content: '';
     position: absolute;
@@ -104,7 +120,7 @@ button.github::after, button.github::before
     transition: transform ease 300ms;
 }
 
-button.github::before
+button::before
 {
     background-color: var(--accentGreen);
     top: -.3em;
@@ -112,7 +128,7 @@ button.github::before
     transform-origin: left;
 }
 
-button.github::after
+button::after
 {
     background-color: var(--accentRed);
     bottom: -.3em;
@@ -120,13 +136,13 @@ button.github::after
     transform-origin: right;
 }
 
-button.github:hover::before
+button:hover::before
 {
     transform: scaleX(1);
     transform-origin: right;
 }
 
-button.github:hover::after
+button:hover::after
 {
     transform: scaleX(1);
     transform-origin: left;
