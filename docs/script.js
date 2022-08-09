@@ -5,7 +5,7 @@ fetch(url).then(x => x.json()).then((x) =>
     const ytEmbed = document.getElementById('ytEmbed');
     const channelName = document.getElementById('channelName');
 
-    const src = `https://www.youtube.com/embed/${x.id.videoID}`;
+    const src = `https://www.youtube-nocookie.com/embed/${x.id.videoID}`;
 
     ytEmbed.setAttribute('src', src);
 
