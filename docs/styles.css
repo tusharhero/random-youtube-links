@@ -15,6 +15,7 @@ body
     align-items: center;
     color: white;
     font-family: 'Syne Mono';
+    margin: 0;
 }
 
 body::-webkit-scrollbar { display: none; }
@@ -53,7 +54,26 @@ body::-webkit-scrollbar { display: none; }
     box-shadow:  0 0 1em .1em var(--accentRed);
 }
 
-#links { margin: 3em 0; }
+#channelName
+{
+    font-size: 1.5rem;
+    margin: 1em 0;
+    position: relative;
+}
+
+#channelName::before
+{
+    content: '-';
+    position: absolute;
+    left: -1em;
+    align-self: center;
+}
+
+#links
+{
+    position: absolute;
+    bottom: 2rem;
+}
 
 button.github
 {
@@ -94,7 +114,6 @@ button.github::before
 
 button.github::after
 {
-    transform-origin: center;
     background-color: var(--accentRed);
     bottom: -.3em;
     left: 0;
