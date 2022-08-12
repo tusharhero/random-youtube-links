@@ -62,6 +62,7 @@ jobs:
       run: |
         git config --global user.name "randomytbot"
         git config --global user.email "randomyt[bot]@tusharhero.github.io"
+        git pull
         git add .
         # "echo" returns true so the build succeeds, even if no changed files
         git commit -m 'Update generated link' || echo
