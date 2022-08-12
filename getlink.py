@@ -41,8 +41,7 @@ def get_search_query():
 
 
 def write_json(new_data, filename="data.json"):
-    with open(filename, "r+") as file:
-        file.seek(0)
+    with open(filename, "w") as file:
         json.dump(new_data, file, indent=4)
 
 
@@ -51,12 +50,10 @@ def main():
     data = get_random_info(get_search_query())
     while data == False:
         data = get_random_info(get_search_query())
-    gendate = str(date.today())
     linkjson = {
         "videoID": data[0],
         "channelName": data[1],
         "channelId": data[2],
-        "generatedAt": gendate
     }
     print(data)
     print(linkjson)
