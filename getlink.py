@@ -42,10 +42,8 @@ def get_search_query():
 
 def write_json(new_data, filename="data.json"):
     with open(filename, "r+") as file:
-        file_data = json.load(file)
-        file_data["id"].update(new_data)
         file.seek(0)
-        json.dump(file_data, file, indent=4)
+        json.dump(new_data, file, indent=4)
 
 
 def main():
@@ -53,16 +51,17 @@ def main():
     data = get_random_info(get_search_query())
     while data == False:
         data = get_random_info(get_search_query())
-
+    gendate = str(date.today())
     linkjson = {
         "videoID": data[0],
         "channelName": data[1],
         "channelId": data[2],
-        "generatedAt": str(date.today()),
+        "generatedAt": gendate
     }
-
-    write_json(linkjson, "ytrandlinks.json")
     print(data)
+    print(linkjson)
+    write_json(linkjson, "ytrandlinks.json")
+   
 
 
 if __name__ == "__main__":
