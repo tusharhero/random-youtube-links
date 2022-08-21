@@ -11,48 +11,58 @@
         
         <title>Randomly YouTube Videos</title>
 
-        <link rel="stylesheet" href="styles.css">
+        <link href="output.css" rel="stylesheet">
         <link rel="shortcut icon" href="logo.png">
 
         <script src="script.js" defer></script>
     </head>
-    <body>
-        <span id="title">
-            Random YouTube Videos
-        </span>
-        <span id="subTitle">
-            Video of the day
-        </span>
-        <div id="embed">
-            <iframe id="ytEmbed"
-                alt="Youtube Video Player"
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-        </div>
-        <span id="channelName">
-            Channel Name
-        </span>
-        <div id="others">
-            <div id="maintainers">
-                Maintained by - 
-                <a id="th" href="https://github.com/tusharhero">Tusharhero</a>
-                &
-                <a id="bs" href="https://github.com/biologyscience">BIOLOGY SCIENCE</a>
-            </div>
-            <div id="links">
-                <button>
-                    <a href="https://github.com/tusharhero/randomlygeneratedytlinks">
-                        <img src="GitHub.svg" alt="GitHub Repo">
-                    </a>
-                </button>
-                <button>
-                    <a href="https://github.com/tusharhero/random-youtube-links/blob/main/LICENSE">
-                        <img src="gpl.svg" alt="LICENSE">
-                    </a>
-                </button>
-            </div>
-        </div>
+    <body class="flex flex-col justify-center items-center bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 bg-blend-color-burn font-mono">
+                <span class="text-5xl text-red-400 antialiased shadow-2xl backdrop-brightness-105">
+                    Random YouTube Videos
+                </span>
+
+                <br>
+                <span class="antialiased">
+                    <span class="text-2xl text-fuchsia-400 animate-pulse">
+                        Video of the day
+                    </span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500 ">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75">
+                        <text class="font-sans font-sx backdrop-brightness-200 text-sky-300">Generated everyday!</text></span>
+                    </span>
+                </span>
+      
+                    <iframe id="ytEmbed"
+                        class="w-full aspect-video max-w-screen-lg  shadow-xl hover:shadow-2xl hover:shadow-cyan-500/50 "
+                        alt="Youtube Video Player"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <br>
+                <span class="flex flex-col justify-center items-center container sm text-2xl" >
+                    <text id="channelName" class="text-green-200 ">Channel Name</text>
+                </span>
+                <div id="others" class="flex flex-col justify-center items-center ">
+                    <div id="maintainers" class=" text-white">
+                        Maintained by - 
+                        <a id="th" href="https://github.com/tusharhero">Tusharhero</a>
+                        &
+                        <a id="bs" href="https://github.com/biologyscience">BIOLOGY SCIENCE</a>
+                    </div>
+                    <div id="links" class="space-x-10 hover:animate-pulse " >
+                        <button class="transition ease-in-out delay-150hover:-translate-y-1 hover:scale-125 duration-300">
+                            <a href="https://github.com/tusharhero/randomlygeneratedytlinks">
+                                <img src="GitHub.svg" alt="GitHub Repo" style="height: 50px;">
+                            </a>
+                        </button>
+                        
+                        <button class="transition ease-in-out delay-150hover:-translate-y-1 hover:scale-125 duration-300">
+                            <a href="https://github.com/tusharhero/random-youtube-links/blob/main/LICENSE">
+                                <img src="gpl.svg" alt="LICENSE" style="height: 50px;">
+                            </a>
+                        </button>
+                    </div>
+                </div>
     </body>
 </html>
